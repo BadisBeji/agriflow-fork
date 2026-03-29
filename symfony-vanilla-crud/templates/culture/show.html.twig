@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détail culture{% endblock %}
+
+{% block body %}
+    <h1>Détail culture</h1>
+    <ul>
+        <li><strong>ID:</strong> {{ culture.id }}</li>
+        <li><strong>Nom:</strong> {{ culture.nom }}</li>
+        <li><strong>Saison:</strong> {{ culture.saison }}</li>
+        <li><strong>Rendement:</strong> {{ culture.rendementEstime }}</li>
+    </ul>
+
+    <a class="btn" href="{{ path('culture_edit', {'id': culture.id}) }}">Modifier</a>
+    <a class="btn" href="{{ path('culture_index') }}">Retour</a>
+    {{ include('culture/_delete_form.html.twig') }}
+{% endblock %}

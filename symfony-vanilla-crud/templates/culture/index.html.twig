@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CRUD Cultures{% endblock %}
+
+{% block body %}
+    <h1>Cultures</h1>
+    <a class="btn" href="{{ path('culture_new') }}">Nouvelle culture</a>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nom</th>
+                <th>Saison</th>
+                <th>Rendement estimé</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for culture in cultures %}
+            <tr>
+                <td>{{ culture.id }}</td>
+                <td>{{ culture.nom }}</td>
+                <td>{{ culture.saison }}</td>
+                <td>{{ culture.rendementEstime }}</td>
+                <td class="actions">
+                    <a class="btn" href="{{ path('culture_show', {'id': culture.id}) }}">Voir</a>
+                    <a class="btn" href="{{ path('culture_edit', {'id': culture.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr><td colspan="5">Aucune culture.</td></tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

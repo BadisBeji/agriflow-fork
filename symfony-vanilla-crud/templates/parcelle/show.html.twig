@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détail parcelle{% endblock %}
+
+{% block body %}
+    <h1>Détail parcelle</h1>
+    <ul>
+        <li><strong>ID:</strong> {{ parcelle.id }}</li>
+        <li><strong>Nom:</strong> {{ parcelle.nom }}</li>
+        <li><strong>Superficie:</strong> {{ parcelle.superficie }}</li>
+        <li><strong>Localisation:</strong> {{ parcelle.localisation }}</li>
+    </ul>
+
+    <a class="btn" href="{{ path('parcelle_edit', {'id': parcelle.id}) }}">Modifier</a>
+    <a class="btn" href="{{ path('parcelle_index') }}">Retour</a>
+    {{ include('parcelle/_delete_form.html.twig') }}
+{% endblock %}
