@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvelle parcelle{% endblock %}
+
+{% block body %}
+    <h1>Ajouter une parcelle</h1>
+    {{ include('parcelle/_form.html.twig') }}
+    <a class="btn" href="{{ path('parcelle_index') }}">Retour</a>
+{% endblock %}

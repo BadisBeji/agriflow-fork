@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CRUD Parcelles{% endblock %}
+
+{% block body %}
+    <h1>Parcelles</h1>
+    <a class="btn" href="{{ path('parcelle_new') }}">Nouvelle parcelle</a>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nom</th>
+                <th>Superficie</th>
+                <th>Localisation</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for parcelle in parcelles %}
+            <tr>
+                <td>{{ parcelle.id }}</td>
+                <td>{{ parcelle.nom }}</td>
+                <td>{{ parcelle.superficie }}</td>
+                <td>{{ parcelle.localisation }}</td>
+                <td class="actions">
+                    <a class="btn" href="{{ path('parcelle_show', {'id': parcelle.id}) }}">Voir</a>
+                    <a class="btn" href="{{ path('parcelle_edit', {'id': parcelle.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr><td colspan="5">Aucune parcelle.</td></tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

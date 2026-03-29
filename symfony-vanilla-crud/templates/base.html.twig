@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}AgriFlow CRUD{% endblock %}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 24px; }
+        nav a { margin-right: 12px; }
+        table { border-collapse: collapse; width: 100%; margin-top: 16px; }
+        th, td { border: 1px solid #dcdcdc; padding: 8px; text-align: left; }
+        .actions a, .actions button { margin-right: 8px; }
+        .btn { display: inline-block; padding: 6px 10px; border: 1px solid #777; text-decoration: none; background: #f3f3f3; color: #111; }
+        .btn-danger { background: #fbe9e9; }
+    </style>
+</head>
+<body>
+<nav>
+    <a href="{{ path('parcelle_index') }}">Parcelles</a>
+    <a href="{{ path('culture_index') }}">Cultures</a>
+</nav>
+<hr>
+{% block body %}{% endblock %}
+</body>
+</html>
